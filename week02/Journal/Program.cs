@@ -1,5 +1,9 @@
 using System;
 
+// EXCEEDING REQUIREMENTS:
+// I added an additional journal prompt beyond the required five prompts.
+// the extra prompt asks,"What is one thing I am grateful for today?"
+// this gives the user more variety when writing journal entries.
 class Program
 {
     static void Main(string[] args)
