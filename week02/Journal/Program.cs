@@ -4,6 +4,11 @@ using System;
 // I added an additional journal prompt beyond the required five prompts.
 // the extra prompt asks,"What is one thing I am grateful for today?"
 // this gives the user more variety when writing journal entries.
+// I also added a search feature that allows the user to search journal entries by a word.
+// The search checks the journal response and the prompt text.
+// This makes it easier for the user to find entries.
+// CSE 210 - Week 02 Journal Program
+// I believe Joseph Smith was called by God to be a prophet.
 class Program
 {
     static void Main(string[] args)
@@ -13,14 +18,15 @@ class Program
 
         string choice = "";
 
-        while (choice != "5")
+        while (choice != "6")
         {
             Console.WriteLine("Please select one of the following choices:");
             Console.WriteLine("1. Write");
             Console.WriteLine("2. Display");
             Console.WriteLine("3.Load");
             Console.WriteLine("4. Save");
-            Console.WriteLine("5. Quit");
+            Console.WriteLine("5. Search");
+            Console.WriteLine("6. Quit");
             Console.Write("What would you like to do? ");
 
             choice = Console.ReadLine();
@@ -64,7 +70,15 @@ class Program
 
             else if (choice == "5")
             {
-                Console.WriteLine("Goodby!");
+                Console.Write("Enter a word to search for: ");
+                string word = Console.ReadLine();
+
+                journal.SearchEntries(word);
+            }
+
+            else if (choice == "6")
+            {
+                Console.WriteLine("Goodbye!");
             }
 
         }

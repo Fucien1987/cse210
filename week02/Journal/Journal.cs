@@ -1,3 +1,5 @@
+using System.Security.Cryptography.X509Certificates;
+
 public class Journal
 {
     public List<Entry> _entries = new List<Entry>();
@@ -16,6 +18,23 @@ public class Journal
         }
     }
 
+    public void SearchEntries(string word)
+    {
+        bool found = false;
+        foreach (Entry entry in _entries)
+        {
+            if (entry._entryText.ToLower().Contains(word.ToLower()) ||
+                entry._promptText.ToLower().Contains(word.ToLower()))
+            {
+                entry.Display();
+                found = true;
+            }
+        }
+        if (!found)
+        {
+            Console.WriteLine("No journal entries found with that word.");
+        }
+    }
     public void SaveToFile(string file)
     {
         using (StreamWriter outputFile = new StreamWriter(file))
