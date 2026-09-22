@@ -1,3 +1,5 @@
+using System.Reflection.Metadata.Ecma335;
+
 public class Scripture
 {
     private Reference _reference;
@@ -55,5 +57,18 @@ public class Scripture
             }
         }
         return true;
+    }
+    public int GetRemainingWordCount()
+    {
+        int count = 0;
+
+        foreach (Word word in _words)
+        {
+            if (!word.IsHidden())
+            {
+                count++;
+            }
+        }
+        return count;
     }
 }

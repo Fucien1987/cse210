@@ -1,3 +1,7 @@
+// EXCEEDING REQUIREMENTS:
+// The program also display the number of word remaining
+// as the user works on memorizing the scripture.
+
 using System;
 
 class Program
@@ -30,6 +34,8 @@ class Program
         {
             Console.Clear();
             Console.WriteLine(scripture.GetDisplayText());
+
+            Console.WriteLine($"Words remaining: {scripture.GetRemainingWordCount()}");
         }
     }
 }
